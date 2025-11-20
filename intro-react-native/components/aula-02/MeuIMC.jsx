@@ -46,17 +46,17 @@ const MeuIMC = () => {
                 </View>
             </View>
 
+            <View style={estilos.form}>
+                <Text style={estilos.texto}>
+                    Resultado: {resultado}
+                </Text>
+            </View>
+
             <View>
                 <Button 
                     title="CALCULAR"
                     onPress={() => calcularIMC()}
                 />
-            </View>
-
-            <View style={estilos.form}>
-                <Text style={estilos.texto}>
-                    Resultado: {resultado}
-                </Text>
             </View>
         </View>
     )
