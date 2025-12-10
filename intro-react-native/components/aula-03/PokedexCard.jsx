@@ -2,34 +2,18 @@ import { View, Image, StyleSheet } from 'react-native';
 import PokedexLabel from './PokedexLabel';
 import PokedexButton from './PokedexButton';
 
-const url = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/";
-
-const pokemons = [
-    {
-        nome: "Bulbasaur",
-        id: 1,
-        imagem: "001.png"
-    },
-
-    {
-        nome: "Charmander",
-        id: 1,
-        imagem: "004.png"
-    }
-]
-
-const PokedexCard = () => {
+const PokedexCard = ({id, nome, imagem}) => {
     return (
         <View style={estilos.card}>
             <Image 
                 style={estilos.imagem}
                 source={
-                    {uri: url + pokemons[0].imagem}
+                    {uri: imagem}
                 }
             />
 
-            <PokedexLabel label = {pokemons[0].nome}/>
-            <PokedexButton titulo = "Capturar" acao= {() => alert("Foi")} />
+            <PokedexLabel label = {nome}/>
+            <PokedexButton titulo = "Capturar" acao= {() => alert("CAPTURADO!")} />
         </View>
     )
 }
@@ -41,6 +25,7 @@ const estilos = StyleSheet.create ({
         borderColor: "#c0c0c0",
 
         padding: 10,
+        margin: 5,
 
         alignSelf: "flex-start",
         alignItems: "center",
